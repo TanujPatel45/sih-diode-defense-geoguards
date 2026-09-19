@@ -1,0 +1,52 @@
+{
+  "benchmark_timestamp": "2026-09-10T07:37:50.235202+00:00",
+  "environment": {
+    "cpu_count_logical": 12,
+    "cpu_count_physical": 6,
+    "ram_total_gb": 15.27,
+    "ram_available_gb": 0.65,
+    "python_version": "3.14.6",
+    "torch_version": "2.14.0+cpu",
+    "device": "CPU (Unidirectional Monitoring Node)"
+  },
+  "model_v1_forward_pass": {
+    "runs": 10000,
+    "avg_ms": 0.1056,
+    "p50_ms": 0.0875,
+    "p95_ms": 0.2237,
+    "p99_ms": 0.3405,
+    "min_ms": 0.0536,
+    "max_ms": 2.6864
+  },
+  "end_to_end_pipeline": {
+    "runs": 5000,
+    "total_time_sec": 34.17,
+    "throughput_flows_per_sec": 146.33,
+    "avg_latency_ms": 6.833,
+    "p50_latency_ms": 6.293,
+    "p95_latency_ms": 10.723,
+    "p99_latency_ms": 13.91,
+    "min_latency_ms": 4.276,
+    "max_latency_ms": 121.0
+  },
+  "pcap_streaming_replay": {
+    "pcap_tested": "backend/traffic_sample.pcap",
+    "available": true,
+    "measured_status": "VALIDATED",
+    "packet_count": 50,
+    "total_bytes": 2000,
+    "flows_extracted": 1,
+    "alerts_emitted": 1,
+    "duration_sec": 0.0746,
+    "packets_per_sec": 670.2,
+    "flows_per_sec": 13.4,
+    "throughput_mbps": 0.214,
+    "avg_alert_latency_ms": 6.447,
+    "p95_alert_latency_ms": 6.447
+  },
+  "operational_targets": {
+    "max_alert_latency_target_sec": 2.0,
+    "measured_e2e_p95_latency_sec": 0.01072,
+    "target_met": true
+  }
+}

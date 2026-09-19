@@ -1,0 +1,22 @@
+{
+  "v1": {
+    "architecture": "DiodeThreatNet (6 -> 64 -> 32 -> 4)",
+    "features_count": 6,
+    "optimizer": "AdamW",
+    "learning_rate": 0.002,
+    "weight_decay": 0.0001,
+    "batch_size": 256,
+    "epochs": 25,
+    "seed": 42
+  },
+  "v2": {
+    "architecture": "DiodeThreatNetV2 (25 -> 128 -> 64 -> 32 -> 4)",
+    "features_count": 25,
+    "optimizer": "AdamW",
+    "learning_rate": 0.002,
+    "weight_decay": 0.0001,
+    "batch_size": 256,
+    "epochs": 25,
+    "seed": 42
+  }
+}

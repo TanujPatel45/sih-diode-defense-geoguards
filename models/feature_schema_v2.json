@@ -1,0 +1,48 @@
+{
+  "version": "v2.0-expanded-metadata",
+  "description": "Expanded 25-feature network flow & metadata schema",
+  "features": [
+    "flow_duration",
+    "packet_count",
+    "byte_count",
+    "packets_per_second",
+    "bytes_per_second",
+    "iat_mean",
+    "iat_std",
+    "iat_min",
+    "iat_max",
+    "pkt_len_mean",
+    "pkt_len_std",
+    "pkt_len_min",
+    "pkt_len_max",
+    "forward_packet_count",
+    "backward_packet_count",
+    "forward_bytes",
+    "backward_bytes",
+    "syn_count",
+    "rst_count",
+    "fin_count",
+    "syn_ratio",
+    "payload_entropy",
+    "src_port",
+    "dst_port",
+    "protocol"
+  ],
+  "input_dim": 25,
+  "classes": [
+    "Benign",
+    "SYN/UDP Flood",
+    "DNS Tunneling",
+    "C2 Beaconing"
+  ],
+  "num_classes": 4,
+  "full_threat_taxonomy": [
+    "Benign",
+    "SYN/UDP Flood",
+    "DNS Tunneling",
+    "C2 Beaconing",
+    "Recon / Port Scan",
+    "Data Exfiltration",
+    "Malware in Encrypted Session"
+  ]
+}

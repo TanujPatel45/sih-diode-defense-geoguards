@@ -1,0 +1,279 @@
+{
+  "audit_timestamp": "2026-09-10T13:01:57.059615",
+  "datasets": {
+    "CIC-IDS2017": {
+      "source": "Canadian Institute for Cybersecurity (ISCX / UNB)",
+      "local_path": "datasets\\MachineLearningCSV\\MachineLearningCVE",
+      "format": "CSV (ISCX flow features)",
+      "total_files": 8,
+      "total_size_mb": 843.66,
+      "total_samples": 2830743,
+      "features_count": 79,
+      "label_distribution": {
+        "DDoS": 128027,
+        "BENIGN": 2273097,
+        "PortScan": 158930,
+        "Bot": 1966,
+        "Infiltration": 36,
+        "Web Attack \u00ef\u00bf\u00bd Brute Force": 1507,
+        "Web Attack \u00ef\u00bf\u00bd XSS": 652,
+        "Web Attack \u00ef\u00bf\u00bd Sql Injection": 21,
+        "FTP-Patator": 7938,
+        "SSH-Patator": 5897,
+        "DoS Hulk": 231073,
+        "DoS GoldenEye": 10293,
+        "DoS slowloris": 5796,
+        "DoS Slowhttptest": 5499,
+        "Heartbleed": 11
+      },
+      "roles": {
+        "training": "Primary supervised network-flow baseline (V1) and extended metadata model (V2), plus Isolation Forest benign baseline",
+        "validation": "In-distribution validation (stratified split by capture session)",
+        "test": "In-distribution holdout evaluation"
+      },
+      "files_detail": {
+        "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": {
+          "size_bytes": 77123859,
+          "size_mb": 73.55,
+          "rows": 225745,
+          "columns": 79,
+          "labels": {
+            "DDoS": 128027,
+            "BENIGN": 97718
+          }
+        },
+        "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": {
+          "size_bytes": 76906168,
+          "size_mb": 73.34,
+          "rows": 286467,
+          "columns": 79,
+          "labels": {
+            "PortScan": 158930,
+            "BENIGN": 127537
+          }
+        },
+        "Friday-WorkingHours-Morning.pcap_ISCX.csv": {
+          "size_bytes": 58316725,
+          "size_mb": 55.62,
+          "rows": 191033,
+          "columns": 79,
+          "labels": {
+            "BENIGN": 189067,
+            "Bot": 1966
+          }
+        },
+        "Monday-WorkingHours.pcap_ISCX.csv": {
+          "size_bytes": 176927918,
+          "size_mb": 168.73,
+          "rows": 529918,
+          "columns": 79,
+          "labels": {
+            "BENIGN": 529918
+          }
+        },
+        "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": {
+          "size_bytes": 83102436,
+          "size_mb": 79.25,
+          "rows": 288602,
+          "columns": 79,
+          "labels": {
+            "BENIGN": 288566,
+            "Infiltration": 36
+          }
+        },
+        "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": {
+          "size_bytes": 52023263,
+          "size_mb": 49.61,
+          "rows": 170366,
+          "columns": 79,
+          "labels": {
+            "BENIGN": 168186,
+            "Web Attack \u00ef\u00bf\u00bd Brute Force": 1507,
+            "Web Attack \u00ef\u00bf\u00bd XSS": 652,
+            "Web Attack \u00ef\u00bf\u00bd Sql Injection": 21
+          }
+        },
+        "Tuesday-WorkingHours.pcap_ISCX.csv": {
+          "size_bytes": 135078995,
+          "size_mb": 128.82,
+          "rows": 445909,
+          "columns": 79,
+          "labels": {
+            "BENIGN": 432074,
+            "FTP-Patator": 7938,
+            "SSH-Patator": 5897
+          }
+        },
+        "Wednesday-workingHours.pcap_ISCX.csv": {
+          "size_bytes": 225166395,
+          "size_mb": 214.74,
+          "rows": 692703,
+          "columns": 79,
+          "labels": {
+            "BENIGN": 440031,
+            "DoS Hulk": 231073,
+            "DoS GoldenEye": 10293,
+            "DoS slowloris": 5796,
+            "DoS Slowhttptest": 5499,
+            "Heartbleed": 11
+          }
+        }
+      }
+    },
+    "DGA_Domains": {
+      "source": "DGA Domains Dataset (Alexa top-1M legit + 25 DGA malware families)",
+      "local_path": "datasets\\DGA_domains_dataset-master",
+      "format": "CSV (Domain strings, family labels, binary class)",
+      "total_files": 2,
+      "total_size_mb": 19.03,
+      "total_samples": 674898,
+      "label_distribution": {
+        "dga": 337500,
+        "legit": 337398
+      },
+      "family_distribution": {
+        "alexa": 337398,
+        "gozi": 13500,
+        "corebot": 13500,
+        "ranbyus": 13500,
+        "symmi": 13500,
+        "emotet": 13500,
+        "dircrypt": 13500,
+        "matsnu": 13500,
+        "simda": 13500,
+        "fobber": 13500,
+        "pushdo": 13500,
+        "qadars": 13500,
+        "kraken": 13500,
+        "ramnit": 13500,
+        "nymaim": 13500,
+        "pykspa": 13500,
+        "tinba": 13500,
+        "murofet": 13500,
+        "cryptolocker": 13500,
+        "ramdo": 13500,
+        "vawtrak": 13500,
+        "conficker": 13500,
+        "padcrypt": 13500,
+        "rovnix": 13500,
+        "suppobox": 13500,
+        "necurs": 13500
+      },
+      "roles": {
+        "training": "Supervised DGA domain classifier (lexical, n-gram, entropy features)",
+        "validation": "Family-aware validation split",
+        "test": "Held-out domain families test"
+      }
+    },
+    "DNS_Tunnel": {
+      "source": "DNS-Tunnel-Datasets (Iodine, dnscat2, dns2tcp, dnspot, cobaltstrike, tcp-over-dns)",
+      "local_path": "datasets\\DNS-Tunnel-Datasets-main",
+      "format": "PCAP (Raw network packet captures)",
+      "total_files": 131,
+      "total_size_mb": 844.35,
+      "categories": {
+        "crossEndPoint": {
+          "count": 9,
+          "size_mb": 112.07,
+          "sample_files": [
+            "AndIodine-CNAME.pcap",
+            "AndIodine-MX.pcap",
+            "AndIodine-NULL.pcap",
+            "AndIodine-SRV.pcap",
+            "AndIodine-TXT.pcap"
+          ]
+        },
+        "normal": {
+          "count": 68,
+          "size_mb": 232.43,
+          "sample_files": [
+            "normal_00000_20230805150331.pcap",
+            "normal_00001_20230805152732.pcap",
+            "normal_00002_20230805155315.pcap",
+            "normal_00003_20230805162300.pcap",
+            "normal_00004_20230805165638.pcap"
+          ]
+        },
+        "tunnel": {
+          "count": 24,
+          "size_mb": 191.46,
+          "sample_files": [
+            "DNS-shell.pcap",
+            "dnscat2-cname.pcap",
+            "dnscat2-mx.pcap",
+            "dnscat2-txt.pcap",
+            "dnspot.pcap"
+          ]
+        },
+        "unkownTunnel": {
+          "count": 17,
+          "size_mb": 160.08,
+          "sample_files": [
+            "cobalstrike.pcap",
+            "dns2tcp-key.pcap",
+            "dns2tcp-txt.pcap",
+            "ozymandns.pcap",
+            "tcp-over-dns-CNAME.pcap"
+          ]
+        },
+        "wildcard": {
+          "count": 13,
+          "size_mb": 148.31,
+          "sample_files": [
+            "wildcard_00000_20231011215521.pcap",
+            "wildcard_00001_20231011215715.pcap",
+            "wildcard_00002_20231011220330.pcap",
+            "wildcard_00003_20231011220812.pcap",
+            "wildcard_00004_20231011221109.pcap"
+          ]
+        }
+      },
+      "roles": {
+        "training": "Known DNS tunnel tools (dnscat2, dns2tcp, dnspot) for DNS feature validation",
+        "validation": "Normal DNS traffic validation",
+        "test_robustness": "Held-out zero-day tunnel captures (unkownTunnel: Cobalt Strike, tcp-over-dns, ozymandns, wildcard, crossEndPoint)"
+      }
+    },
+    "USTC-TFC2016": {
+      "source": "USTC-TFC2016 Traffic Classification Dataset",
+      "local_path": "datasets\\USTC-TFC2016-master",
+      "format": "PCAP and 7z archives (10 Benign apps, 10 Malware families)",
+      "total_files": 20,
+      "total_size_mb": 369.19,
+      "benign_classes": [
+        "BitTorrent.pcap",
+        "Facetime.pcap",
+        "FTP.pcap",
+        "Gmail.pcap",
+        "MySQL.pcap",
+        "Outlook.pcap",
+        "Skype.pcap",
+        "SMB.7z",
+        "Weibo.7z",
+        "WorldOfWarcraft.pcap"
+      ],
+      "malware_classes": [
+        "Cridex.7z",
+        "Geodo.7z",
+        "Htbot.7z",
+        "Miuref.pcap",
+        "Neris.7z",
+        "Nsis-ay.7z",
+        "Shifu.7z",
+        "Tinba.pcap",
+        "Virut.7z",
+        "Zeus.pcap"
+      ],
+      "roles": {
+        "external_validation": "Malware vs Benign flow generalization validation on unencrypted/encrypted application sessions"
+      }
+    },
+    "CTU-13": {
+      "source": "CTU-13 Dataset (Stratosphere IPS / CTU University)",
+      "local_path": "Referenced in PS / Generalization target (Botnet C2 scenarios)",
+      "format": "NetFlow / PCAP (Bidi-flows)",
+      "status": "External C2 beaconing behavior profile validated via Ares/Botnet flows from CIC-IDS2017 and CTU-13 C2 periodicity heuristic benchmarks",
+      "note": "ARES Botnet flows in Friday-WorkingHours-Morning (1,966 samples) provide local real botnet training & validation data."
+    }
+  }
+}

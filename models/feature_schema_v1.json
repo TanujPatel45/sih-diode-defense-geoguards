@@ -1,0 +1,20 @@
+{
+  "version": "v1.0-baseline",
+  "description": "DiodeThreatNet 6-feature baseline schema",
+  "features": [
+    "iat_mean",
+    "iat_std",
+    "pkt_len_mean",
+    "pkt_len_std",
+    "payload_entropy",
+    "syn_ratio"
+  ],
+  "input_dim": 6,
+  "classes": [
+    "Benign",
+    "SYN/UDP Flood",
+    "DNS Tunneling",
+    "C2 Beaconing"
+  ],
+  "num_classes": 4
+}

@@ -1,0 +1,29 @@
+# Virtual Environment & Python Caches
+backend/venv/
+venv/
+__pycache__/
+*.pyc
+
+# Node & Next.js Build Files
+frontend/node_modules/
+frontend/.next/
+.next/
+node_modules/
+
+# Environment Variables
+.env
+.env.local
+
+# Datasets & Raw Captures
+datasets/
+ml/artifacts/
+*.pcap
+*.pcapng
+*.7z
+*.csv
+*.npz
+scratch/
+
+# OS / Editor Files
+.DS_Store
+*.log

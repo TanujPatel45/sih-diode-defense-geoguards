@@ -1,0 +1,60 @@
+{
+  "v1_baseline_isolated": {
+    "train_val": {
+      "pair": "Train_V1 <-> Val_V1",
+      "unique_rows_1": 31753,
+      "unique_rows_2": 9467,
+      "shared_exact_feature_vectors": 780,
+      "percentage_of_set1": 2.456,
+      "percentage_of_set2": 8.239,
+      "leakage_risk": "Elevated"
+    },
+    "train_test": {
+      "pair": "Train_V1 <-> Test_V1",
+      "unique_rows_1": 31753,
+      "unique_rows_2": 18280,
+      "shared_exact_feature_vectors": 853,
+      "percentage_of_set1": 2.686,
+      "percentage_of_set2": 4.666,
+      "leakage_risk": "Elevated"
+    },
+    "val_test": {
+      "pair": "Val_V1 <-> Test_V1",
+      "unique_rows_1": 9467,
+      "unique_rows_2": 18280,
+      "shared_exact_feature_vectors": 556,
+      "percentage_of_set1": 5.873,
+      "percentage_of_set2": 3.042,
+      "leakage_risk": "Elevated"
+    }
+  },
+  "v2_expanded_isolated": {
+    "train_val": {
+      "pair": "Train_V2 <-> Val_V2",
+      "unique_rows_1": 47341,
+      "unique_rows_2": 16618,
+      "shared_exact_feature_vectors": 0,
+      "percentage_of_set1": 0.0,
+      "percentage_of_set2": 0.0,
+      "leakage_risk": "Low (Expected background TCP handshakes)"
+    },
+    "train_test": {
+      "pair": "Train_V2 <-> Test_V2",
+      "unique_rows_1": 47341,
+      "unique_rows_2": 21620,
+      "shared_exact_feature_vectors": 0,
+      "percentage_of_set1": 0.0,
+      "percentage_of_set2": 0.0,
+      "leakage_risk": "Low (Expected background TCP handshakes)"
+    },
+    "val_test": {
+      "pair": "Val_V2 <-> Test_V2",
+      "unique_rows_1": 16618,
+      "unique_rows_2": 21620,
+      "shared_exact_feature_vectors": 0,
+      "percentage_of_set1": 0.0,
+      "percentage_of_set2": 0.0,
+      "leakage_risk": "Low (Expected background TCP handshakes)"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+# ============================================================
+# SIH 26145 — Passive Cyber Intelligence Prototype
+# Backend Requirements
+# ============================================================
+# Install with: pip install -r requirements.txt
+# Python >= 3.10 required (uses union type hints with |)
+# ============================================================
+
+# ── Web framework ─────────────────────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+
+# ── Data science / ML ─────────────────────────────────────────────────────────
+numpy>=1.26.0
+pandas>=2.2.0
+scikit-learn>=1.4.0
+joblib>=1.4.0
+
+# ── Deep learning ─────────────────────────────────────────────────────────────
+# Install PyTorch separately if a CUDA version is needed:
+#   https://pytorch.org/get-started/locally/
+torch>=2.2.0
+
+# ── Network / packet analysis ─────────────────────────────────────────────────
+scapy>=2.5.0
+requests>=2.31.0
+
+# ── Database ──────────────────────────────────────────────────────────────────
+# Motor (async MongoDB driver). Optional — system falls back to in-memory if
+# MONGO_URL is not set. Install anyway to avoid import errors.
+motor>=3.4.0
+
+# ── Config / validation ───────────────────────────────────────────────────────
+pydantic>=2.7.0
+python-dotenv>=1.0.0
+
+# ── Legacy (kept for app.py Streamlit stub — not required for main pipeline) ──
+# streamlit>=1.35.0

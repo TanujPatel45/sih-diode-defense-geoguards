@@ -1,0 +1,55 @@
+# =====================================================================
+# detection_thresholds.yaml
+# Detection Thresholds and Risk Fusion Weights for GeoGuards (SIH 26145)
+# All parameters are configurable and metadata-grounded.
+# =====================================================================
+
+risk_fusion:
+  # Baseline fusion weights (configurable, must sum to 1.0)
+  weights:
+    supervised_classifier: 0.50
+    anomaly_detector: 0.25
+    behaviour_analytics: 0.25
+  
+  # Severity mapping
+  severity_thresholds:
+    critical: 0.85
+    high: 0.70
+    medium: 0.45
+    low: 0.20
+
+anomaly_detection:
+  contamination: 0.03
+  score_scaling_factor: 2.0
+  baseline_source: "real_dataset (CIC-IDS2017 Clean Benign)"
+
+c2_beaconing:
+  # Low coefficient of variation in inter-arrival times indicates strict periodicity
+  iat_cv_threshold: 0.35
+  min_flow_count: 3
+  min_packets_per_flow: 4
+  jitter_threshold_ms: 150.0
+
+dns_tunnelling:
+  # Shannon entropy threshold for suspicious DNS subdomains
+  entropy_threshold: 3.65
+  max_subdomain_length: 32
+  query_rate_per_sec: 8.0
+  txt_or_null_record_ratio: 0.30
+
+reconnaissance_portscan:
+  fan_out_host_threshold: 5
+  fan_out_port_threshold: 8
+  scan_rate_per_sec: 15.0
+  short_flow_packet_limit: 3
+
+data_exfiltration:
+  outbound_inbound_byte_ratio: 4.5
+  sustained_outbound_bytes: 500000 # 500 KB
+  min_duration_seconds: 5.0
+  asymmetry_index_threshold: 0.75
+
+encrypted_traffic:
+  tls_sni_entropy_threshold: 3.8
+  packet_size_sequence_variance_min: 120.0
+  ja3_hash_analysis_enabled: true

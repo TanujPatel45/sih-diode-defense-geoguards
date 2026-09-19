@@ -1,0 +1,15 @@
+{
+  "model_type": "IsolationForest",
+  "baseline_source": "real_dataset (CIC-IDS2017 Monday/Tuesday Clean Benign)",
+  "training_samples": 20000,
+  "features": [
+    "iat_mean",
+    "iat_std",
+    "pkt_len_mean",
+    "pkt_len_std",
+    "payload_entropy",
+    "syn_ratio"
+  ],
+  "contamination": 0.03,
+  "offset": -0.6205181950289097
+}

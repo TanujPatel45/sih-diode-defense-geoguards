@@ -1,0 +1,360 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GeoGuards Design System v4.0 — Next-Gen Cyber Command Center
+   Hyper-Realistic Frosted Glassmorphism · Cyber Grid · Neon Telemetry
+═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Core Backgrounds ─────────────────────────────────────── */
+  --gg-bg:          #030712;     /* Deep Void Obsidian */
+  --gg-bg-2:        #060d1d;
+  --gg-surface:     rgba(11, 20, 38, 0.55);
+  --gg-surface-2:   rgba(15, 27, 52, 0.68);
+  --gg-surface-3:   rgba(20, 36, 68, 0.78);
+  --gg-glass:       rgba(255, 255, 255, 0.035);
+  --gg-glass-2:     rgba(255, 255, 255, 0.065);
+  --gg-glass-hover: rgba(255, 255, 255, 0.09);
+
+  /* ── Borders & Sheens ─────────────────────────────────────── */
+  --gg-border:        rgba(255, 255, 255, 0.08);
+  --gg-border-2:      rgba(255, 255, 255, 0.14);
+  --gg-border-3:      rgba(255, 255, 255, 0.24);
+
+  /* ── Semantic Colors (High Luminescence) ──────────────────── */
+  --gg-green:       #10b981;
+  --gg-green-glow:  rgba(16, 185, 129, 0.28);
+  --gg-green-dim:   rgba(16, 185, 129, 0.1);
+  --gg-green-glass: rgba(16, 185, 129, 0.15);
+  --gg-green-border:rgba(16, 185, 129, 0.4);
+
+  --gg-cyan:        #06b6d4;
+  --gg-cyan-glow:   rgba(6, 182, 212, 0.28);
+  --gg-cyan-dim:    rgba(6, 182, 212, 0.1);
+  --gg-cyan-glass:  rgba(6, 182, 212, 0.15);
+  --gg-cyan-border: rgba(6, 182, 212, 0.4);
+
+  --gg-indigo:       #6366f1;
+  --gg-indigo-glow:  rgba(99, 102, 241, 0.28);
+
+  --gg-amber:       #f59e0b;
+  --gg-amber-dim:   rgba(245, 158, 11, 0.1);
+  --gg-amber-glass: rgba(245, 158, 11, 0.15);
+  --gg-amber-border:rgba(245, 158, 11, 0.4);
+
+  --gg-orange:      #f97316;
+  --gg-orange-dim:  rgba(249, 115, 22, 0.1);
+  --gg-orange-glass:rgba(249, 115, 22, 0.15);
+  --gg-orange-border:rgba(249, 115, 22, 0.4);
+
+  --gg-red:         #ef4444;
+  --gg-red-glow:    rgba(239, 68, 68, 0.32);
+  --gg-red-dim:     rgba(239, 68, 68, 0.1);
+  --gg-red-glass:   rgba(239, 68, 68, 0.15);
+  --gg-red-border:  rgba(239, 68, 68, 0.45);
+
+  /* ── Text Hierarchy ───────────────────────────────────────── */
+  --gg-text:        #f8fafc;
+  --gg-text-2:      #cbd5e1;
+  --gg-text-3:      #94a3b8;
+  --gg-muted:       #64748b;
+  --gg-muted-2:     #1e293b;
+
+  /* ── Typography ───────────────────────────────────────────── */
+  --font-ui:        var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:      var(--font-geist-mono), 'Cascadia Code', 'JetBrains Mono', monospace;
+
+  /* ── Radius ───────────────────────────────────────────────── */
+  --gg-radius-xl: 16px;
+  --gg-radius:    12px;
+  --gg-radius-sm: 8px;
+  --gg-radius-xs: 4px;
+
+  /* ── Glass Filters & Shadows ──────────────────────────────── */
+  --glass-blur:         blur(24px) saturate(200%);
+  --glass-blur-sm:      blur(16px) saturate(180%);
+  --glass-blur-heavy:   blur(40px) saturate(220%);
+  --glass-shadow:       0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  --glass-shadow-hover: 0 14px 44px 0 rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+}
+
+/* ══ Base Reset & High-Tech Cyber Grid Background ═════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  height: 100%;
+  background-color: var(--gg-bg);
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(ellipse 90% 60% at 10% -10%, rgba(6, 182, 212, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 90% 110%, rgba(16, 185, 129, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 50% 40%, rgba(99, 102, 241, 0.06) 0%, transparent 70%),
+    radial-gradient(circle 500px at 80% 20%, rgba(239, 68, 68, 0.04) 0%, transparent 70%);
+  background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--gg-text);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: transparent;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Monospace for technical values ONLY */
+.mono { font-family: var(--font-mono); }
+
+/* ══ Custom Scrollbars ══════════════════════════════════════════════════════ */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(255, 255, 255, 0.12); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.25); }
+
+/* ══ Ultra-Premium Glassmorphism Card ═════════════════════════════════════ */
+.gg-card {
+  background: linear-gradient(135deg, rgba(12, 22, 42, 0.6) 0%, rgba(8, 15, 28, 0.7) 100%);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--gg-border);
+  border-radius: var(--gg-radius);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glass Light Sheen on top edge */
+.gg-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 30%,
+    rgba(6, 182, 212, 0.4) 65%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gg-card:hover {
+  border-color: var(--gg-border-2);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Elevated Glass Variant */
+.gg-card-elevated {
+  background: linear-gradient(135deg, rgba(16, 28, 54, 0.65) 0%, rgba(10, 18, 36, 0.75) 100%);
+  backdrop-filter: var(--glass-blur-heavy);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid var(--gg-border-2);
+  border-radius: var(--gg-radius-xl);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.14);
+}
+
+/* Inset Glass Variant */
+.gg-card-inset {
+  background: rgba(3, 7, 18, 0.45);
+  backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--gg-radius-sm);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* ══ Glass Interactive Elements (Buttons & Tabs) ═════════════════════════ */
+.gg-glass-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--gg-radius-sm);
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--gg-border);
+  color: var(--gg-text);
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.gg-glass-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--gg-border-2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+  transform: translateY(-1px);
+}
+
+.gg-glass-btn-primary {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.2));
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #34d399;
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.gg-glass-btn-primary:hover {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.35), rgba(6, 182, 212, 0.28));
+  border-color: rgba(16, 185, 129, 0.65);
+  box-shadow: 0 0 28px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(255,255,255,0.3);
+  transform: translateY(-1px);
+}
+
+/* ══ Glass Severity Badges & Indicators ═══════════════════════════════════ */
+.sev-critical {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.25), inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.sev-high {
+  color: #fb923c;
+  background: rgba(249, 115, 22, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  box-shadow: 0 0 14px rgba(249, 115, 22, 0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.sev-medium {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.sev-low {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* ══ Label Utility ══════════════════════════════════════════════════════════ */
+.gg-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gg-text-3);
+}
+
+/* ══ Glass Modal & Drawers ══════════════════════════════════════════════════ */
+.gg-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: var(--glass-blur-heavy);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fade-in 0.2s ease-out;
+}
+
+.gg-modal-panel {
+  background: linear-gradient(135deg, rgba(13, 24, 48, 0.92) 0%, rgba(8, 15, 30, 0.96) 100%);
+  backdrop-filter: var(--glass-blur-heavy);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid var(--gg-border-2);
+  border-radius: var(--gg-radius-xl);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 28px 72px rgba(0,0,0,0.75),
+    0 0 80px rgba(6, 182, 212, 0.1),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  animation: slide-up 0.22s ease-out;
+  position: relative;
+}
+
+.gg-modal-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(6,182,212,0.7), rgba(16,185,129,0.5), transparent);
+  border-radius: var(--gg-radius-xl) var(--gg-radius-xl) 0 0;
+}
+
+/* ══ Radar & Animations ═════════════════════════════════════════════════════ */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(0.85); }
+}
+@keyframes flow-down {
+  0%   { opacity: 0.15; transform: translateY(-4px); }
+  50%  { opacity: 0.95; transform: translateY(0); }
+  100% { opacity: 0.15; transform: translateY(4px); }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes radar-sweep {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(16,185,129,0.25); }
+  50%       { box-shadow: 0 0 24px rgba(16,185,129,0.5); }
+}
+
+.animate-pulse-dot    { animation: pulse-dot 2s ease-in-out infinite; }
+.animate-flow-down    { animation: flow-down 2.4s ease-in-out infinite; }
+.animate-slide-up     { animation: slide-up 0.22s ease-out; }
+.animate-fade-in      { animation: fade-in 0.2s ease-out; }
+.animate-glow-pulse   { animation: glow-pulse 2s ease-in-out infinite; }
+.animate-radar-sweep  { animation: radar-sweep 4s linear infinite; }
+
+/* ══ Glass Table Rows ══════════════════════════════════════════════════════ */
+.gg-table-row {
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.gg-table-row:hover {
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: inset 0 0 20px rgba(6, 182, 212, 0.05);
+}
+
+/* ══ Glowing Status Dots ════════════════════════════════════════════════════ */
+.status-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-dot-green  { background: var(--gg-green);  box-shadow: 0 0 10px rgba(16,185,129,0.9); }
+.status-dot-red    { background: var(--gg-red);    box-shadow: 0 0 10px rgba(239,68,68,0.9); }
+.status-dot-amber  { background: var(--gg-amber);  box-shadow: 0 0 10px rgba(245,158,11,0.8); }
+.status-dot-cyan   { background: var(--gg-cyan);   box-shadow: 0 0 10px rgba(6,182,212,0.8); }
+.status-dot-gray   { background: var(--gg-text-3); }

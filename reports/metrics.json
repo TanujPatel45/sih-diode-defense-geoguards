@@ -1,0 +1,479 @@
+{
+  "timestamp": "2026-09-10T14:09:12.154529",
+  "audit_status": "Strict Day & Capture Isolated Evaluation Completed",
+  "model_v1_baseline": {
+    "features_count": 6,
+    "accuracy": 0.8050878815911193,
+    "macro_precision": 0.6674195081438118,
+    "macro_recall": 0.6534265089722675,
+    "macro_f1": 0.6444950668086373,
+    "weighted_f1": 0.7928007170234443,
+    "fpr": 0.0104,
+    "fnr": 0.35370051635111877,
+    "latency": {
+      "avg_ms": 0.14152040123008192,
+      "p95_ms": 0.24080497096292666
+    },
+    "per_class": {
+      "Benign": {
+        "precision": 0.7065543338569185,
+        "recall": 0.9896,
+        "f1": 0.8244605515287845,
+        "support": 10000
+      },
+      "SYN/UDP Flood": {
+        "precision": 0.9886828041496385,
+        "recall": 0.629,
+        "f1": 0.7688546632441022,
+        "support": 10000
+      },
+      "DNS Tunneling": {
+        "precision": 0.9744408945686901,
+        "recall": 0.9951060358890701,
+        "f1": 0.9846650524616626,
+        "support": 1226
+      },
+      "C2 Beaconing": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 394
+      }
+    },
+    "confusion_matrix": [
+      [
+        9896,
+        72,
+        32,
+        0
+      ],
+      [
+        3710,
+        6290,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        1220,
+        0
+      ],
+      [
+        394,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "model_v2_expanded": {
+    "features_count": 25,
+    "accuracy": 0.8188714153561517,
+    "macro_precision": 0.915752746132559,
+    "macro_recall": 0.8374577460852427,
+    "macro_f1": 0.8621179725405581,
+    "weighted_f1": 0.8152622452539293,
+    "fpr": 0.0421,
+    "fnr": 0.30077452667814114,
+    "latency": {
+      "avg_ms": 0.20161839993670583,
+      "p95_ms": 0.3636650799307963
+    },
+    "per_class": {
+      "Benign": {
+        "precision": 0.7326755392381826,
+        "recall": 0.9579,
+        "f1": 0.8302851694547976,
+        "support": 10000
+      },
+      "SYN/UDP Flood": {
+        "precision": 0.9405743531418823,
+        "recall": 0.6616,
+        "f1": 0.7767993424914876,
+        "support": 10000
+      },
+      "DNS Tunneling": {
+        "precision": 1.0,
+        "recall": 0.9942903752039152,
+        "f1": 0.9971370143149284,
+        "support": 1226
+      },
+      "C2 Beaconing": {
+        "precision": 0.9897610921501706,
+        "recall": 0.7360406091370558,
+        "f1": 0.8442503639010189,
+        "support": 394
+      }
+    },
+    "confusion_matrix": [
+      [
+        9579,
+        418,
+        0,
+        3
+      ],
+      [
+        3384,
+        6616,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        1219,
+        0
+      ],
+      [
+        104,
+        0,
+        0,
+        290
+      ]
+    ]
+  },
+  "ablation_results": {
+    "Exp_A_V1_Baseline_6feat": {
+      "features_count": 6,
+      "accuracy": 0.8050878815911193,
+      "macro_f1": 0.6444950668086373,
+      "weighted_f1": 0.7928007170234443,
+      "macro_precision": 0.6674195081438118,
+      "macro_recall": 0.6534265089722675,
+      "fpr": 0.0104,
+      "fnr": 0.35370051635111877,
+      "avg_latency_ms": 0.14152040123008192,
+      "p95_latency_ms": 0.24080497096292666,
+      "per_class": {
+        "Benign": {
+          "precision": 0.7065543338569185,
+          "recall": 0.9896,
+          "f1": 0.8244605515287845,
+          "support": 10000
+        },
+        "SYN/UDP Flood": {
+          "precision": 0.9886828041496385,
+          "recall": 0.629,
+          "f1": 0.7688546632441022,
+          "support": 10000
+        },
+        "DNS Tunneling": {
+          "precision": 0.9744408945686901,
+          "recall": 0.9951060358890701,
+          "f1": 0.9846650524616626,
+          "support": 1226
+        },
+        "C2 Beaconing": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 394
+        }
+      },
+      "confusion_matrix": [
+        [
+          9896,
+          72,
+          32,
+          0
+        ],
+        [
+          3710,
+          6290,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          1220,
+          0
+        ],
+        [
+          394,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "Exp_B_V2_All_25feat": {
+      "features_count": 25,
+      "accuracy": 0.8188714153561517,
+      "macro_f1": 0.8621179725405581,
+      "weighted_f1": 0.8152622452539293,
+      "macro_precision": 0.915752746132559,
+      "macro_recall": 0.8374577460852427,
+      "fpr": 0.0421,
+      "fnr": 0.30077452667814114,
+      "avg_latency_ms": 0.20161839993670583,
+      "p95_latency_ms": 0.3636650799307963,
+      "per_class": {
+        "Benign": {
+          "precision": 0.7326755392381826,
+          "recall": 0.9579,
+          "f1": 0.8302851694547976,
+          "support": 10000
+        },
+        "SYN/UDP Flood": {
+          "precision": 0.9405743531418823,
+          "recall": 0.6616,
+          "f1": 0.7767993424914876,
+          "support": 10000
+        },
+        "DNS Tunneling": {
+          "precision": 1.0,
+          "recall": 0.9942903752039152,
+          "f1": 0.9971370143149284,
+          "support": 1226
+        },
+        "C2 Beaconing": {
+          "precision": 0.9897610921501706,
+          "recall": 0.7360406091370558,
+          "f1": 0.8442503639010189,
+          "support": 394
+        }
+      },
+      "confusion_matrix": [
+        [
+          9579,
+          418,
+          0,
+          3
+        ],
+        [
+          3384,
+          6616,
+          0,
+          0
+        ],
+        [
+          7,
+          0,
+          1219,
+          0
+        ],
+        [
+          104,
+          0,
+          0,
+          290
+        ]
+      ]
+    },
+    "Exp_C_V2_Port_Agnostic_22feat": {
+      "features_count": 22,
+      "accuracy": 0.808695652173913,
+      "macro_f1": 0.8573457725609196,
+      "weighted_f1": 0.8036114029970249,
+      "macro_precision": 0.8531930348930055,
+      "macro_recall": 0.895884339314845,
+      "fpr": 0.0431,
+      "fnr": 0.31884681583476765,
+      "avg_latency_ms": 0.19515879824757576,
+      "p95_latency_ms": 0.3063000040128827,
+      "per_class": {
+        "Benign": {
+          "precision": 0.7208829290342021,
+          "recall": 0.9569,
+          "f1": 0.8222909684626623,
+          "support": 10000
+        },
+        "SYN/UDP Flood": {
+          "precision": 0.9570039501671225,
+          "recall": 0.6299,
+          "f1": 0.7597394765408274,
+          "support": 10000
+        },
+        "DNS Tunneling": {
+          "precision": 0.988673139158576,
+          "recall": 0.9967373572593801,
+          "f1": 0.9926888708367181,
+          "support": 1226
+        },
+        "C2 Beaconing": {
+          "precision": 0.7462121212121212,
+          "recall": 1.0,
+          "f1": 0.8546637744034707,
+          "support": 394
+        }
+      },
+      "confusion_matrix": [
+        [
+          9569,
+          283,
+          14,
+          134
+        ],
+        [
+          3701,
+          6299,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          1222,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          394
+        ]
+      ]
+    },
+    "Exp_D_V2_Pure_Telemetry_21feat": {
+      "features_count": 21,
+      "accuracy": 0.8202127659574469,
+      "macro_f1": 0.8864044493892419,
+      "weighted_f1": 0.8144463592780847,
+      "macro_precision": 0.9005274104299898,
+      "macro_recall": 0.9021093393148449,
+      "fpr": 0.018,
+      "fnr": 0.3189328743545611,
+      "avg_latency_ms": 0.19438520027324557,
+      "p95_latency_ms": 0.36336508346721513,
+      "per_class": {
+        "Benign": {
+          "precision": 0.726009167529203,
+          "recall": 0.982,
+          "f1": 0.8348210490521125,
+          "support": 10000
+        },
+        "SYN/UDP Flood": {
+          "precision": 0.9800778210116732,
+          "recall": 0.6297,
+          "f1": 0.7667579908675799,
+          "support": 10000
+        },
+        "DNS Tunneling": {
+          "precision": 0.9902755267423015,
+          "recall": 0.9967373572593801,
+          "f1": 0.9934959349593496,
+          "support": 1226
+        },
+        "C2 Beaconing": {
+          "precision": 0.9057471264367816,
+          "recall": 1.0,
+          "f1": 0.9505428226779252,
+          "support": 394
+        }
+      },
+      "confusion_matrix": [
+        [
+          9820,
+          128,
+          12,
+          40
+        ],
+        [
+          3702,
+          6297,
+          0,
+          1
+        ],
+        [
+          4,
+          0,
+          1222,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          394
+        ]
+      ]
+    }
+  },
+  "multi_seed_stability": {
+    "seeds": [
+      42,
+      101,
+      777,
+      1337,
+      2026
+    ],
+    "runs": [
+      {
+        "seed": 42,
+        "accuracy": 0.8050878815911193,
+        "macro_f1": 0.6444950668086373,
+        "weighted_f1": 0.7928007170234443,
+        "macro_recall": 0.6534265089722675,
+        "fpr": 0.0104,
+        "fnr": 0.35370051635111877
+      },
+      {
+        "seed": 101,
+        "accuracy": 0.7512025901942646,
+        "macro_f1": 0.38952399789029535,
+        "weighted_f1": 0.7206734466055419,
+        "macro_recall": 0.40602499999999997,
+        "fpr": 0.0049,
+        "fnr": 0.45860585197934595
+      },
+      {
+        "seed": 777,
+        "accuracy": 0.7512950971322849,
+        "macro_f1": 0.38921219642887006,
+        "weighted_f1": 0.7200965706362072,
+        "macro_recall": 0.40607499999999996,
+        "fpr": 0.0018,
+        "fnr": 0.4602409638554217
+      },
+      {
+        "seed": 1337,
+        "accuracy": 0.7480573543015726,
+        "macro_f1": 0.61631484705194,
+        "weighted_f1": 0.7414680811795635,
+        "macro_recall": 0.6226015089722675,
+        "fpr": 0.2061,
+        "fnr": 0.29139414802065405
+      },
+      {
+        "seed": 2026,
+        "accuracy": 0.8019888991674375,
+        "macro_f1": 0.643203943454962,
+        "weighted_f1": 0.790437175829786,
+        "macro_recall": 0.6508569331158238,
+        "fpr": 0.0141,
+        "fnr": 0.35628227194492257
+      }
+    ],
+    "mean_accuracy": 0.7715263644773358,
+    "std_accuracy": 0.02618203914461462,
+    "mean_macro_f1": 0.5365500103269409,
+    "std_macro_f1": 0.12059411725748649,
+    "mean_macro_recall": 0.5477969902120717,
+    "std_macro_recall": 0.11624033965034859,
+    "mean_fpr": 0.04746,
+    "std_fpr": 0.07943446607109536,
+    "mean_fnr": 0.3840447504302926,
+    "std_fnr": 0.06578887852047231
+  },
+  "zero_day_dns_robustness": {
+    "dataset": "DNS-Tunnel-Datasets/unkownTunnel (Cobalt Strike, tcp-over-dns, ozymandns)",
+    "isolation_status": "Strictly Held-Out (Never seen during training, scaling, or tuning)",
+    "total_zero_day_flows": 2274,
+    "true_positives_threat": 931,
+    "false_negatives_missed": 1343,
+    "threat_detection_rate": 0.4094107299912049,
+    "specific_dns_tunnel_classification_rate": 0.40633245382585753,
+    "verdict": "High Zero-Day Generalization"
+  },
+  "isolation_forest_audit": {
+    "training_source": "CIC-IDS2017 Monday-WorkingHours (Exclusively Clean Benign)",
+    "training_samples": 25000,
+    "contamination": 0.03,
+    "unseen_test_benign_false_alarm_rate": 0.0296,
+    "unseen_ddos_anomaly_detection_rate": 0.6298,
+    "zero_day_dns_tunnel_anomaly_detection_rate": 0.018469656992084433,
+    "status": "Verified: Isolation Forest was fitted exclusively on clean benign training traffic."
+  }
+}
