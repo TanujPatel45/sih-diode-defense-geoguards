@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GeoGuards — Passive Cyber Intelligence for Unidirectional Networks
 
 **Smart India Hackathon 2026 · Problem Statement 26145**  
@@ -190,3 +191,6 @@ sih-diode-defense-main/
 ├── MODEL_CARD.md                # Standardized AI model card
 └── README.md
 ```
+=======
+# sih-diode-defense-geoguards
+>>>>>>> 8cdfe85fabcc775dffae087c7f33d81462e14eab
